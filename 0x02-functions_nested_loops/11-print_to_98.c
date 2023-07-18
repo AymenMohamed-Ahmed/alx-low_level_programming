@@ -30,6 +30,10 @@ print_number(98);
 _putchar('\n');
 }
 
+/**
+ * print_number - prints the number
+ * @n: is the number
+ */
 void print_number(int n)
 {
 int i, j, div, num_digits;
@@ -52,7 +56,7 @@ for (i = 0; i < num_digits; i++)
 {
 j = n / div;
 _putchar(j + '0');
-n -= j * div;
+n -= j *div;
 div /= 10;
 }
 }
