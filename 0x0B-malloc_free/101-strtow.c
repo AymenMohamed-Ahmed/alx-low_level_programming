@@ -89,7 +89,7 @@ free(words);
 */
 char **strtow(char *str)
 {
-int i, j, k, wc, len;
+int i, j, wc, len;
 char **words;
 
 if (str == NULL || str[0] == '\0')
@@ -128,6 +128,5 @@ copy_word(words[i], str + j);
 j += len;
 }
 words[i] = NULL;
-
 return (words);
 }
