@@ -65,6 +65,23 @@ return (dest);
 }
 
 /**
+* free_words - Frees an array of strings
+* @words: The array of strings to free
+*
+* Return: nothing
+*/
+void free_words(char **words)
+{
+int i;
+
+for (i = 0; words[i] != NULL; ++i)
+{
+free(words[i]);
+}
+free(words);
+}
+
+/**
 * strtow - Splits a string into words
 * @str: The string to split
 *
@@ -81,6 +98,11 @@ return (NULL);
 }
 
 wc = word_count(str);
+if (wc == 0)
+{
+return (NULL);
+}
+
 words = malloc((wc + 1) * sizeof(char *));
 if (words == NULL)
 {
@@ -98,11 +120,7 @@ len = word_len(str + j);
 words[i] = malloc((len + 1) * sizeof(char));
 if (words[i] == NULL)
 {
-for (k = 0; k < i; ++k)
-{
-free(words[k]);
-}
-free(words);
+free_words(words);
 return (NULL);
 }
 
