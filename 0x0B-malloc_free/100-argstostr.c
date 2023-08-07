@@ -27,6 +27,8 @@ arg_len++;
 total_len += arg_len + 1;
 }
 
+total_len += 1; /* Add one for null terminator character */
+
 concatenated = (char *)malloc(total_len *sizeof(char));
 
 if (concatenated == NULL)
