@@ -10,7 +10,8 @@ void print_opcodes(void *ptr, size_t size)
 {
 unsigned char *bytes = (unsigned char *)ptr;
 
-for (size_t i = 0; i < size; i++)
+size_t i;
+for (i = 0; i < size; i++)
 {
 printf("%02x", bytes[i]);
 if (i != size - 1)
