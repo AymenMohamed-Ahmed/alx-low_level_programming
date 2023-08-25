@@ -5,7 +5,7 @@ section .data
 
 section .text
     global main
-    extern printf
+    extern printf, exit
 
 main:
     push rbp
@@ -16,4 +16,5 @@ main:
     mov rsi, newline
     call printf
     pop rbp
-    ret
+    xor rdi, rdi     ; Exit status code 0
+    call exit
