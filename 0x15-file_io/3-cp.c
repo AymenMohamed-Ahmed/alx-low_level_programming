@@ -39,7 +39,8 @@ fd_from = open(av[1], O_RDONLY);
 if (fd_from == -1)
 error_msg(98, "Error: Can't read from file %s\n", av[1]);
 
-fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC,
+		S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 if (fd_to == -1)
 error_msg(99, "Error: Can't write to %s\n", av[2]);
 
